@@ -2,6 +2,15 @@ from functools import partial
 from jax import jit
 import jax.numpy as jnp
 
+import os
+import sys
+_THIS_DIR = os.path.dirname(__file__)
+_REPO_ROOT = os.path.abspath(os.path.join(_THIS_DIR, '..'))
+_SRC_DIR = os.path.join(_REPO_ROOT, 'src')
+if _SRC_DIR not in sys.path:
+      sys.path.insert(0, _SRC_DIR)
+
+
 from gradient_extremals_on_manifolds.DiffGeom_Potential import DiffGeom_Potential
 
 class SphericalMB(DiffGeom_Potential):
